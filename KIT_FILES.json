@@ -18,7 +18,7 @@
     {
       "path": "CHANGELOG.md",
       "version": "3.0.1-local",
-      "sha256": "93567239953648e7a7e9b32314a2d8112a78b061a9a2dd237b61c60248801716",
+      "sha256": "b8c09b95204f5e25e69b3715c7ff1c3811d2ac46859265ee6b444045f2ef2618",
       "type": "guide"
     },
     {
@@ -42,7 +42,7 @@
     {
       "path": "README.md",
       "version": "3.0.1-local",
-      "sha256": "9680de3c1c55dc3da48b9b6e3dd7d752594fd8934dd0f4cc6f591afc4f2a5ab6",
+      "sha256": "a8027526d30eaeee7332a311fa2991147b6b643caebf8bb7d9a0bd93918f36fe",
       "type": "guide"
     },
     {
