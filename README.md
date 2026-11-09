@@ -6,7 +6,7 @@
 
 Для вдосконалення самого комплекту працюйте безпосередньо в цьому репозиторії за [CONTRIBUTING.md](CONTRIBUTING.md). Версії фіксуються Git-тегами; дослідження родини ведіть в окремій копії.
 
-**[Сайт і приклади знахідок](https://genealogy-kit.popovychandrew.chatgpt.site)** · **[Завантажити ZIP](https://github.com/AndriiPopovych/genealogy-kit/archive/refs/heads/main.zip)** · [Принципи дослідження](AGENTS.md)
+**[Сайт і приклади знахідок](https://andriipopovych.github.io/genealogy-kit/)** · **[Завантажити ZIP](https://github.com/AndriiPopovych/genealogy-kit/archive/refs/heads/main.zip)** · [Принципи дослідження](AGENTS.md)
 
 Комплект безкоштовний за MIT. Обраний AI-сервіс та окремі архівні послуги можуть бути платними. Приклади знахідок на сайті описують окремі дослідження автора та не гарантують такого самого результату.
 
