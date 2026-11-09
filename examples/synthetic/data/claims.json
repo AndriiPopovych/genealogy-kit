@@ -1,0 +1,121 @@
+[
+  {
+    "id": "C1",
+    "source_id": "S1",
+    "subject_person_ids": [
+      "P1",
+      "P2"
+    ],
+    "text_as_written": "Оповідач переказує слова про Северина як батька Тихона.",
+    "statement_kind": "source_statement",
+    "normalized_statement": "Оповідач переказує слова про Северина як батька Тихона.",
+    "locator": "L01–L02",
+    "reading_confidence": {
+      "level": "high",
+      "reason": "Ясний текст синтетичного матеріалу"
+    }
+  },
+  {
+    "id": "C2",
+    "source_id": "S2",
+    "subject_person_ids": [
+      "P1",
+      "P2",
+      "P3"
+    ],
+    "text_as_written": "Умовний акт A називає Северина й Мавру батьками Тихона.",
+    "statement_kind": "source_statement",
+    "normalized_statement": "Умовний акт A називає Северина й Мавру батьками Тихона.",
+    "locator": "акт 1, L01–L03",
+    "reading_confidence": {
+      "level": "high",
+      "reason": "Ясний текст синтетичного матеріалу"
+    }
+  },
+  {
+    "id": "C3",
+    "source_id": "S3",
+    "subject_person_ids": [
+      "P1",
+      "P4",
+      "P3"
+    ],
+    "text_as_written": "Умовний акт B називає Семена батьком Тихона.",
+    "statement_kind": "source_statement",
+    "normalized_statement": "Умовний акт B називає Семена батьком Тихона.",
+    "locator": "акт 2, L01–L02",
+    "reading_confidence": {
+      "level": "high",
+      "reason": "Ясний текст синтетичного матеріалу"
+    }
+  },
+  {
+    "id": "C4",
+    "source_id": "S4",
+    "subject_person_ids": [
+      "P1",
+      "P2"
+    ],
+    "text_as_written": "Похідний покажчик повторює акт A.",
+    "statement_kind": "source_statement",
+    "normalized_statement": "Похідний покажчик повторює акт A.",
+    "locator": "L01",
+    "reading_confidence": {
+      "level": "high",
+      "reason": "Ясний текст синтетичного матеріалу"
+    }
+  },
+  {
+    "id": "C5",
+    "source_id": "S2",
+    "subject_person_ids": [
+      "P1",
+      "P5"
+    ],
+    "text_as_written": "Орест названий родичем, ступінь невідомий.",
+    "statement_kind": "source_statement",
+    "normalized_statement": "Орест названий родичем, ступінь невідомий.",
+    "locator": "L04",
+    "reading_confidence": {
+      "level": "high",
+      "reason": "Ясний текст синтетичного матеріалу"
+    }
+  },
+  {
+    "id": "C6",
+    "source_id": "S5",
+    "subject_person_ids": [
+      "P5"
+    ],
+    "text_as_written": "Автор вторинної праці називає Ореста членом родинного кола.",
+    "statement_kind": "source_statement",
+    "normalized_statement": "Автор вторинної праці називає Ореста членом родинного кола.",
+    "locator": "сторінка 7, L01; процитований шифр лише L02",
+    "reading_confidence": {
+      "level": "high",
+      "reason": "Ясний текст синтетичного матеріалу"
+    }
+  },
+  {
+    "id": "C7",
+    "source_id": "S3",
+    "subject_person_ids": [
+      "P1"
+    ],
+    "text_as_written": "Оцінка народження близько 1903 з віку 30 у 1933.",
+    "statement_kind": "inference",
+    "normalized_statement": "Оцінка народження близько 1903 з віку 30 у 1933.",
+    "locator": "L02",
+    "reading_confidence": {
+      "level": "high",
+      "reason": "Ясний текст синтетичного матеріалу"
+    },
+    "derivation": "1933 − 30; приблизно, день народження невідомий",
+    "event_date": {
+      "as_written": "30 років",
+      "normalized": "1903",
+      "precision": "approximate",
+      "calendar": "unknown"
+    }
+  }
+]

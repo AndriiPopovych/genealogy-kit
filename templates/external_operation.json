@@ -1,0 +1,21 @@
+{
+  "operation_id": "<стабільний ID операції>",
+  "service": "<сервіс>",
+  "tree_id": "<дерево>",
+  "action": "update",
+  "audience": "private",
+  "authorization": "<явний дозволений обсяг>",
+  "local_refs": [],
+  "external_id": null,
+  "expected_remote_version": null,
+  "old_value": null,
+  "new_value": null,
+  "events": [],
+  "source_locators": [],
+  "decision_status": "candidate",
+  "uncertainty_note": "",
+  "media": [],
+  "privacy_revision": "",
+  "status": "planned",
+  "read_back": null
+}

@@ -1,0 +1,18 @@
+{
+  "source_id": "S-DEMO-ADMIN",
+  "locator": "incoming/administrative.txt L01",
+  "assertion_context": {
+    "speaker": "Заявник З. (вигаданий)",
+    "role": "заявник",
+    "recorded_at": "1904-01-10",
+    "asserted_event_date": "торік",
+    "nature": "заява",
+    "locator": "L01"
+  },
+  "decision_context": {
+    "recorded_at": "1904-02-01",
+    "nature": "рішення",
+    "locator": "L02"
+  },
+  "execution": "unknown"
+}

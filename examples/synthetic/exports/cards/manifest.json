@@ -1,0 +1,69 @@
+{
+  "snapshot_at": "2026-11-09",
+  "topic": "Синтетичний перехід і конфлікт",
+  "audience": "Навчальний локальний перегляд",
+  "record_refs": [
+    {
+      "type": "P",
+      "id": "P1",
+      "sha256": "8a594f678cf75b8dfe3d8c43d15c11f6c0a09eb86decebcf44bddbb4b67e9f4f"
+    },
+    {
+      "type": "P",
+      "id": "P2",
+      "sha256": "217c34af1b4105e5238a6ea548c41617d2d1ee3286ee69b461729a2a93cf9a1b"
+    },
+    {
+      "type": "S",
+      "id": "S2",
+      "sha256": "66f4e8abe7d5bc7c9898de2666d04e8fd54451d7c97aa7a84cfbdd1e8abc85cf"
+    },
+    {
+      "type": "S",
+      "id": "S3",
+      "sha256": "dae45f25fbb76e9801f3d8a004e5e55256d534b64217e705986045ed328e8629"
+    },
+    {
+      "type": "C",
+      "id": "C2",
+      "sha256": "c046033e80de0add857f11ba6689857e59c89889a2aea6f0b56ec6f5cac41098"
+    },
+    {
+      "type": "C",
+      "id": "C3",
+      "sha256": "ee34ec9ebe7446906220209e116e743b8aa1e6dd1bd0ada5407b22e89cfb1f35"
+    },
+    {
+      "type": "L",
+      "id": "L1",
+      "sha256": "9befd2b95a91b3f0edc189d9346b897e32ddd02934854e704f69e25959c23477"
+    }
+  ],
+  "input_files": [
+    {
+      "path": "transcripts/record-a.txt",
+      "sha256": "1039ebdd6d131876090def7af0cb85fe63a086fa0cc0276e8ed0592e5e9b595a"
+    },
+    {
+      "path": "transcripts/record-b.txt",
+      "sha256": "dc859eabaa113480e77f524d661704f66ee421981a71846980c769ec44480a77"
+    }
+  ],
+  "files": [
+    {
+      "path": "exports/cards/cards.md",
+      "sha256": "9c4b08fe4ad8c92d99c4f134876fe42d1c20c6abbba3cb9d642eb053e9ae79dc"
+    },
+    {
+      "path": "exports/cards/card-1.png",
+      "sha256": "4ae9e9ecdac882bf275be98f161cf036b5568f0176104e2a3221580be05a91a7"
+    },
+    {
+      "path": "exports/cards/card-2.png",
+      "sha256": "e65328f0697c0dda6b9328327abc240dd777f3b6647f9200f96ce1c9d716a216"
+    }
+  ],
+  "privacy_revision": "synthetic-only-1; реальні living/unknown не включати",
+  "local_status": "current",
+  "deployed_status": "not_deployed"
+}

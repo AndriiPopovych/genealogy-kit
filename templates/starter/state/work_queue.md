@@ -1,0 +1,11 @@
+# Черга працівників
+
+Єдиний записувач головної бази (ім’я / чат / призначено коли): не призначено.
+
+| J / Q / межа призначення | execution | acceptance | last_observed_at/by | mechanism / live_id | attempt_path | SEARCH IDs | Наступна дія |
+|---|---|---|---|---|---|---|---|
+
+execution: queued / running / completed / interrupted / blocked / unknown.
+acceptance: not_started / partial / accepted / needs_revision.
+
+Кожна J має окремий рядок. Фактичне покриття лише в SEARCH, не дублюється тут. Старий running перевіряється через живий механізм; без відповіді unknown. Часткове приймання не визначає стан процесу. Тайм-аут не дозволяє дубль задачі.

@@ -1,0 +1,23 @@
+# Допоміжний бар’єр; публічний пакет будується лише за KIT_FILES.json.
+__pycache__/
+*.pyc
+.DS_Store
+/backups/
+/reviews/
+/proposals/
+/workers/
+/originals/
+/transcripts/
+/working/
+/inbox/
+/exports/
+/drafts/
+/dist/
+/build/
+/release/
+/.codex/
+/.claude/
+/.agents/
+*.part
+*.log
+.env

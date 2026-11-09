@@ -1,0 +1,13 @@
+{
+  "source_namespace": "<окрема система>",
+  "snapshot_at": "<дата отримання>",
+  "container": {
+    "path": "<файл>",
+    "sha256": null
+  },
+  "members": [],
+  "external_allowed_source": null,
+  "previous_snapshot": null,
+  "content_delta": [],
+  "pending_review_refs": []
+}

@@ -1,0 +1,60 @@
+[
+  {
+    "id": "L1",
+    "kind": "parent_child",
+    "person_ids": [
+      "P1",
+      "P2"
+    ],
+    "roles": {
+      "parent": "P2",
+      "child": "P1"
+    },
+    "claim_ids": [
+      "C1",
+      "C2",
+      "C3"
+    ],
+    "relationship_nature": "unspecified",
+    "status": "accepted_working",
+    "identity_confidence": {
+      "level": "medium",
+      "reason": "Місце, мати й дитина збігаються; тезка не виключений"
+    },
+    "relationship_confidence": {
+      "level": "medium",
+      "reason": "Акт A та переказ; акт B суперечить імені батька"
+    },
+    "assessed_by": "Модель, навчальний приклад",
+    "assessed_at": "2026-11-09",
+    "basis": "Робоча перевага акта A з повним продовженням; не механічна кількість документів",
+    "conflicts": [
+      "C3: Семен замість Северина"
+    ],
+    "alternative_search_scope": "Перевірено лише два вигадані акти; інша сім’я можлива",
+    "revisit_if": "Знайдеться інший акт або буде спростовано тотожність"
+  },
+  {
+    "id": "L2",
+    "kind": "family_circle",
+    "person_ids": [
+      "P1",
+      "P5"
+    ],
+    "roles": {},
+    "claim_ids": [
+      "C5"
+    ],
+    "status": "candidate",
+    "identity_confidence": {
+      "level": "medium",
+      "reason": "Названі в одному синтетичному акті"
+    },
+    "relationship_confidence": {
+      "level": "undetermined",
+      "reason": "Слово родич не визначає повнорідності"
+    },
+    "assessed_by": "Модель",
+    "assessed_at": "2026-11-09"
+  }
+]

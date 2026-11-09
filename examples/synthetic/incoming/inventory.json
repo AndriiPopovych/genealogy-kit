@@ -1,0 +1,59 @@
+{
+  "source_namespace": "DEMO-PACKAGE",
+  "snapshot_at": "2026-11-09",
+  "container": {
+    "path": "incoming/package.zip",
+    "sha256": "c0ea414ac70b3131771cb5e14dc63710ed78cbda4037df899e9515388c295dd9"
+  },
+  "members": [
+    {
+      "member": "images/act-a.png",
+      "kind": "original_record",
+      "sha256": "d1877341638af8f6da79850bf7f89c17ce378a3c5d2ee5ecf5e66475290dd466",
+      "bytes": 59302,
+      "review_status": "unread"
+    },
+    {
+      "member": "report.txt",
+      "kind": "research_report",
+      "sha256": "707995703c96322e139fdb7985d74a9e2ecdc723c216c99271dccadbb2fea839",
+      "bytes": 188,
+      "review_status": "unread"
+    },
+    {
+      "member": "tree.json",
+      "kind": "tree_assertion",
+      "sha256": "e154c154e7f1961bcd22f1b48b6dc339b3c875e4b9d3b2336a82748308632326",
+      "bytes": 107,
+      "review_status": "unread"
+    }
+  ],
+  "namespace_mapping": [
+    {
+      "source_namespace": "DEMO-TREE-A",
+      "old_id": "1",
+      "proposed_local_id": "P1",
+      "decision": "candidate"
+    },
+    {
+      "source_namespace": "DEMO-TREE-B",
+      "old_id": "1",
+      "proposed_local_id": null,
+      "decision": "unresolved"
+    }
+  ],
+  "content_delta": [
+    {
+      "path": "people[old_id=1].father",
+      "old_value": "Северин",
+      "new_value": "Семен",
+      "status": "pending_review",
+      "refs": [
+        {
+          "type": "C",
+          "id": "C3"
+        }
+      ]
+    }
+  ]
+}

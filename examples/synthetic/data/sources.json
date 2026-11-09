@@ -1,0 +1,106 @@
+[
+  {
+    "id": "S1",
+    "title": "Синтетичний testimony.txt",
+    "kind": "family_testimony",
+    "provenance": "Створено координатором як вигаданий навчальний матеріал 09.11.2026",
+    "locator": "transcripts/testimony.txt",
+    "files": [
+      {
+        "path": "transcripts/testimony.txt",
+        "provenance": "Локально створено; не отримано з архіву",
+        "received_at": "2026-11-09",
+        "sha256": "75c40235542a4e06783611502baa7177f07d973bcd99fdd494adb9d03efdb5e4",
+        "bytes": 339,
+        "role": "synthetic_text"
+      }
+    ]
+  },
+  {
+    "id": "S2",
+    "title": "Синтетичний record-a.txt",
+    "kind": "original_record",
+    "provenance": "Створено координатором як вигаданий навчальний матеріал 09.11.2026",
+    "locator": "transcripts/record-a.txt",
+    "files": [
+      {
+        "path": "transcripts/record-a.txt",
+        "provenance": "Локально створено; не отримано з архіву",
+        "received_at": "2026-11-09",
+        "sha256": "1039ebdd6d131876090def7af0cb85fe63a086fa0cc0276e8ed0592e5e9b595a",
+        "bytes": 500,
+        "role": "synthetic_text"
+      },
+      {
+        "path": "originals/act-a.png",
+        "provenance": "Авторський синтетичний макет тексту цього S; не історичний скан",
+        "received_at": "2026-11-09",
+        "sha256": "d1877341638af8f6da79850bf7f89c17ce378a3c5d2ee5ecf5e66475290dd466",
+        "bytes": 59302,
+        "role": "synthetic_visualization"
+      }
+    ]
+  },
+  {
+    "id": "S3",
+    "title": "Синтетичний record-b.txt",
+    "kind": "original_record",
+    "provenance": "Створено координатором як вигаданий навчальний матеріал 09.11.2026",
+    "locator": "transcripts/record-b.txt",
+    "files": [
+      {
+        "path": "transcripts/record-b.txt",
+        "provenance": "Локально створено; не отримано з архіву",
+        "received_at": "2026-11-09",
+        "sha256": "dc859eabaa113480e77f524d661704f66ee421981a71846980c769ec44480a77",
+        "bytes": 273,
+        "role": "synthetic_text"
+      },
+      {
+        "path": "originals/act-b.png",
+        "provenance": "Авторський синтетичний макет тексту цього S; не історичний скан",
+        "received_at": "2026-11-09",
+        "sha256": "dd1d5c567aa8f300f72cde34aa2d100bd92b236034d326c9ca8c459e441eb99b",
+        "bytes": 56140,
+        "role": "synthetic_visualization"
+      }
+    ]
+  },
+  {
+    "id": "S4",
+    "title": "Синтетичний index.txt",
+    "kind": "derivative_index",
+    "provenance": "Створено координатором як вигаданий навчальний матеріал 09.11.2026",
+    "locator": "transcripts/index.txt",
+    "files": [
+      {
+        "path": "transcripts/index.txt",
+        "provenance": "Локально створено; не отримано з архіву",
+        "received_at": "2026-11-09",
+        "sha256": "da85c2f32bb11e6afac84988903cd05e58e1e7aea54a4dc713414e2298b7fe3e",
+        "bytes": 165,
+        "role": "synthetic_text"
+      }
+    ],
+    "derived_from_source_ids": [
+      "S2"
+    ]
+  },
+  {
+    "id": "S5",
+    "title": "Синтетичний reference.txt",
+    "kind": "reference_work",
+    "provenance": "Створено координатором як вигаданий навчальний матеріал 09.11.2026",
+    "locator": "transcripts/reference.txt",
+    "files": [
+      {
+        "path": "transcripts/reference.txt",
+        "provenance": "Локально створено; не отримано з архіву",
+        "received_at": "2026-11-09",
+        "sha256": "ef3b072353b5c48da766f906a146b399ac24a9e845b1d6bdda8c298c5004e525",
+        "bytes": 313,
+        "role": "synthetic_text"
+      }
+    ]
+  }
+]

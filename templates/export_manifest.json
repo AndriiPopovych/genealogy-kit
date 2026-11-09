@@ -1,0 +1,11 @@
+{
+  "snapshot_at": "<дата>",
+  "topic": "<тема>",
+  "audience": "<аудиторія>",
+  "record_refs": [],
+  "input_files": [],
+  "files": [],
+  "privacy_revision": "<редакція приватності>",
+  "local_status": "draft",
+  "deployed_status": "not_deployed"
+}

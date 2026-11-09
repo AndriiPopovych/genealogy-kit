@@ -1,0 +1,4 @@
+document_key	frame	folio	entry	year	section	names_as_written	roles_as_written	review_status	reviewed_fields	transcript_path	locator
+DEMO:A	1	1	1	1901	умовні акти	Тихон; Северин; Мавра	син; батько; мати	partial_review	імена	transcripts/record-a.txt	L01
+DEMO:A	3	2	1	1901	продовження	Северин	свідок	partial_review	роль	transcripts/record-a.txt	L03
+DEMO:B	1	1	2	1933	умовні акти	Тихон; Семен	син; батько	machine_ocr_unverified	пошуковий текст	transcripts/record-b.txt	L01

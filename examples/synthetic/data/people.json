@@ -1,0 +1,27 @@
+[
+  {
+    "id": "P1",
+    "display_name": "Тихон Навчальний",
+    "living_status": "unknown"
+  },
+  {
+    "id": "P2",
+    "display_name": "Северин Навчальний",
+    "living_status": "unknown"
+  },
+  {
+    "id": "P3",
+    "display_name": "Мавра Прикладна",
+    "living_status": "unknown"
+  },
+  {
+    "id": "P4",
+    "display_name": "Семен Умовний",
+    "living_status": "unknown"
+  },
+  {
+    "id": "P5",
+    "display_name": "Орест Зразковий",
+    "living_status": "unknown"
+  }
+]
