@@ -60,7 +60,7 @@ class RegistryTests(unittest.TestCase):
  def test_dependency_selective_and_no_writes(self):
   for name,refs in [('dependent',[{'type':'L','id':'L1'}]),('independent',[{'type':'L','id':'L2'}])]:
    p=self.root/'exports'/name/'manifest.json';p.parent.mkdir(parents=True);p.write_text(json.dumps({'record_refs':refs,'input_files':[]}))
-  before=(self.root/'data/links.json').read_bytes();a=affected(self.root,['C3']);self.assertEqual(a['needs_review'],['L:L1']);self.assertEqual({x['path'] for x in a['editions']},{'exports/cards/manifest.json','exports/dependent/manifest.json'});self.assertEqual(before,(self.root/'data/links.json').read_bytes())
+  before=(self.root/'data/links.json').read_bytes();a=affected(self.root,['C3']);self.assertEqual(a['needs_review'],['L:L1']);self.assertEqual({x['path'] for x in a['editions']},{'exports/cards/manifest.json','exports/dependent/manifest.json','exports/research-update/manifest.json','exports/family-report/manifest.json'});self.assertEqual(before,(self.root/'data/links.json').read_bytes())
  def test_cli_exit_codes(self):
   r=subprocess.run([sys.executable,str(ROOT/'tools/validate_registry.py'),str(self.root),'--json'],capture_output=True,text=True);self.assertEqual(r.returncode,0);self.assertEqual(json.loads(r.stdout)['errors'],0)
  def test_typed_namespace_and_ambiguous_change(self):

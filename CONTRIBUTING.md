@@ -20,6 +20,8 @@ PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s tests -v
 
 Для HTTP-тестів потрібні curl, Pillow і доступ до loopback; вони не звертаються до реальних архівних сайтів. Swift/PDFKit перевіряється лише на macOS зі swiftc. Без потрібних можливостей назви неперевірений обсяг, не заявляй універсальної підтримки. Залежності завантажувачів описані в tools/requirements-downloads.txt.
 
+Для тестів PDF-генератора додатково потрібні tools/requirements-reports.txt і локальний TTF із кирилицею; за потреби задайте KIT_TEST_FONT. Без них PDF-тести позначаються skipped. Сценарії поведінки агента описані в examples/synthetic/research-control-scenarios.md; unit-тести не доводять їх виконання реальним агентом.
+
 Структурні перевірки:
 
 ```sh

@@ -1,0 +1,130 @@
+{
+  "snapshot_at": "2026-11-11",
+  "topic": "Родина Навчальних\nСинтетичний приклад",
+  "audience": "owner",
+  "record_refs": [
+    {
+      "type": "C",
+      "id": "C1",
+      "sha256": "e23aff178559b2335e73fbd05bed347225a5b73529d72c7e2fed017011e79a0a"
+    },
+    {
+      "type": "C",
+      "id": "C2",
+      "sha256": "c046033e80de0add857f11ba6689857e59c89889a2aea6f0b56ec6f5cac41098"
+    },
+    {
+      "type": "C",
+      "id": "C3",
+      "sha256": "ee34ec9ebe7446906220209e116e743b8aa1e6dd1bd0ada5407b22e89cfb1f35"
+    },
+    {
+      "type": "C",
+      "id": "C5",
+      "sha256": "9debba30103ceafa41874abb67be962b4e73a4d601b1e7cb3ad773946fecef0e"
+    },
+    {
+      "type": "C",
+      "id": "C7",
+      "sha256": "391af6a1d3bee79d249bf1fd7cc6c6c4a5dd6065d2c2abd95f358038b10255e7"
+    },
+    {
+      "type": "L",
+      "id": "L1",
+      "sha256": "9befd2b95a91b3f0edc189d9346b897e32ddd02934854e704f69e25959c23477"
+    },
+    {
+      "type": "L",
+      "id": "L2",
+      "sha256": "ac2638af8a604f0a9e9d203a6f009f8f0f050aef60ca644ca852fe7904243f69"
+    },
+    {
+      "type": "P",
+      "id": "P1",
+      "sha256": "8a594f678cf75b8dfe3d8c43d15c11f6c0a09eb86decebcf44bddbb4b67e9f4f"
+    },
+    {
+      "type": "P",
+      "id": "P2",
+      "sha256": "217c34af1b4105e5238a6ea548c41617d2d1ee3286ee69b461729a2a93cf9a1b"
+    },
+    {
+      "type": "P",
+      "id": "P3",
+      "sha256": "374b4b21cc2f27cc37727dc37c2757a7f8a99ac4922899173033815fe4406b62"
+    },
+    {
+      "type": "P",
+      "id": "P4",
+      "sha256": "3431ac9053cfeec3ecd7267e2738428b6868e080ca21f2d2046882f39ba6aaf0"
+    },
+    {
+      "type": "P",
+      "id": "P5",
+      "sha256": "6becb64404d3aaf9b527df2f4278faa2924bab069bdfe4efc898b92cbb3333ef"
+    },
+    {
+      "type": "S",
+      "id": "S1",
+      "sha256": "f4a5b02bf49315a2460b1b3e8916033905e2dd632fc34bed60f0c1cefb2733fb"
+    },
+    {
+      "type": "S",
+      "id": "S2",
+      "sha256": "66f4e8abe7d5bc7c9898de2666d04e8fd54451d7c97aa7a84cfbdd1e8abc85cf"
+    },
+    {
+      "type": "S",
+      "id": "S3",
+      "sha256": "dae45f25fbb76e9801f3d8a004e5e55256d534b64217e705986045ed328e8629"
+    }
+  ],
+  "input_files": [
+    {
+      "path": "data/claims.json",
+      "sha256": "c1ca14deb7bb45ebde3e98a37e9ad63b90d8ac138ac0389bd70ec46677cf1c06"
+    },
+    {
+      "path": "data/links.json",
+      "sha256": "25de7117a693d5d5eb41da731e5dfafffe9b0d79e7711f77b3e2925f1428699f"
+    },
+    {
+      "path": "data/people.json",
+      "sha256": "5af9143b4d0c6d5b625f11037b5808734207c8d7d0393ba318ccdc15ece88fef"
+    },
+    {
+      "path": "data/searches.jsonl",
+      "sha256": "1f7c4f7cd6d68807579b1c7c31850cc30f8934027fb87cb786559cce65810c1c"
+    },
+    {
+      "path": "data/sources.json",
+      "sha256": "8d506c2d89d65398f61ccd2abd108a5e0a09c0366ec4f54328ec038e5469bc36"
+    },
+    {
+      "path": "family_report.json",
+      "sha256": "3edf272b114d9fbf38435f67b36e9957044c13a0d4d3da8b664ee536ebb4b38b"
+    },
+    {
+      "path": "originals/act-a.png",
+      "sha256": "d1877341638af8f6da79850bf7f89c17ce378a3c5d2ee5ecf5e66475290dd466"
+    },
+    {
+      "path": "originals/act-b.png",
+      "sha256": "dd1d5c567aa8f300f72cde34aa2d100bd92b236034d326c9ca8c459e441eb99b"
+    }
+  ],
+  "files": [
+    {
+      "path": "exports/family-report/metrics.json",
+      "sha256": "b5d46e3dfd7e52f905e875368af581ba2dd7fa9c348fc9f5949547c35e8009ce"
+    },
+    {
+      "path": "exports/family-report/report.pdf",
+      "sha256": "67f0eef0590e0af4da7c927e2a0ee019b7655d6ca19434bf760160b4b4f1494b"
+    }
+  ],
+  "privacy_revision": "synthetic-only",
+  "local_status": "current",
+  "deployed_status": "not_deployed",
+  "visual_qa": "2026-11-11: модель оглянула всі 5 сторінок після рендеру Poppler; текст, схема та зображення читабельні. Внутрішні переходи перевірені pypdf; зовнішніх адрес у прикладі немає."
+}

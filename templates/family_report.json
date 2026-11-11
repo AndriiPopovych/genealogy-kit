@@ -1,0 +1,17 @@
+{
+  "title": "<Тема дослідження>",
+  "snapshot_at": "<YYYY-MM-DD>",
+  "audience": "owner",
+  "root_person_id": "<P-ID>",
+  "summary": "<Головний результат і його межі за C/L>",
+  "changes": "<Зміни проти датованого зрізу або перший зріз>",
+  "decision": {
+    "status": "continue",
+    "reason": "<Підстава рішення за research_control.md>",
+    "next_action": "<Наступна перспективна перевірка або порожньо>",
+    "reopen_when": "<Умова повернення до відкладених напрямів або порожньо>"
+  },
+  "sections": [],
+  "documents": [],
+  "privacy_review": {"by": "", "date": "", "scope": ""}
+}

@@ -89,6 +89,7 @@
     "provenance": null
   },
   "digital_locator": {
+    "viewer_url": null,
     "collection": null,
     "dgs": null,
     "ark": null,
@@ -114,6 +115,8 @@
 Допустимі `kind`: `family_testimony`, `original_record`, `historical_copy`, `derivative_index`, `tree_assertion`, `research_report`, `catalog`, `reference_work`. Вони описують походження, не автоматичний рейтинг достовірності.
 
 Елемент `files`: `{"path": "originals/S0001/<файл>", "original_name": "<назва при отриманні>", "sha256": "<64 hex після обчислення>", "bytes": 0, "role": "full_scan", "provenance": "<URL або отримано від кого>", "received_at": "<фактична дата>"}`. Після обчислення внесіть справжню суму й розмір.
+
+Необов’язкове `digital_locator.viewer_url` — перевірена адреса переглядача конкретного документа/кадру; `url` може вести до каталогу. Генератор PDF не конструює адресу з номера кадру й не перевіряє сайт. Правила — guide/pdf_reports.md.
 
 Для сімейного свідчення архівні поля лишаються порожніми. У `creator_or_informant` зазначте людину або псевдонім; у `notes` — прямий спогад, переказ чи невідоме походження. Збережіть текст свідчення в `transcripts/`.
 
