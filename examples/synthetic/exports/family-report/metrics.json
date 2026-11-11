@@ -2,22 +2,30 @@
   "people_cards": 5,
   "source_records": 5,
   "search_entries": 3,
-  "ancestors_including_working": 1,
+  "ancestors_including_working": 0,
   "ancestors_supported_only": 0,
+  "biological_ancestors_including_working": 0,
+  "adoptive_only_ancestors_including_working": 0,
+  "context_only_people": 1,
   "ancestry": {
     "root_id": "P1",
-    "ancestor_ids": [
-      "P2"
-    ],
+    "ancestor_ids": [],
     "supported_ancestor_ids": [],
-    "working_only_ancestor_ids": [
+    "working_only_ancestor_ids": [],
+    "biological_ancestor_ids": [],
+    "biological_supported_ancestor_ids": [],
+    "adoptive_only_ancestor_ids": [],
+    "context_only_person_ids": [
       "P2"
     ],
+    "family_link_ids": [],
     "link_ids": [
       "L1"
     ],
-    "depth_including_working": 1,
-    "depth_supported_only": 0
+    "depth_including_working": 0,
+    "depth_supported_only": 0,
+    "biological_depth_including_working": 0,
+    "biological_depth_supported_only": 0
   },
   "coverage": {
     "known_units": {

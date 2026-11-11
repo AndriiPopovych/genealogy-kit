@@ -10,7 +10,6 @@ from urllib.parse import urlsplit
 from xml.sax.saxutils import escape
 
 from research_metrics import load, metrics
-from validate_registry import Validator
 
 STATUS = {'supported': 'Добре обґрунтовано', 'accepted_working': 'Робочий зв’язок',
           'candidate': 'Кандидат', 'unresolved': 'Не вирішено', 'rejected': 'Відхилено'}
@@ -18,6 +17,9 @@ DECISIONS = {'continue': 'Пошук триває', 'goal_reached': 'Погод�
              'paused_input': 'Очікуємо потрібну дію', 'paused_resource': 'Пауза через ресурс',
              'stopped_low_yield': 'Доступний перспективний пошук завершено'}
 LEVELS = {'high': 'висока', 'medium': 'середня', 'low': 'низька', 'undetermined': 'не визначено'}
+NATURES = {'biological': 'Біологічний', 'adoptive': 'Усиновлення',
+           'step': 'Вітчим / мачуха', 'household': 'Спільне домогосподарство',
+           'other': 'Інший', 'unspecified': 'Природу не встановлено'}
 SOURCE_KINDS = {'family_testimony': 'Родинне свідчення', 'original_record': 'Оригінальний запис',
                 'derivative_index': 'Похідний покажчик', 'research_report': 'Дослідницький звіт',
                 'tree_assertion': 'Твердження з дерева', 'catalog': 'Каталог',
@@ -73,10 +75,8 @@ def build(root, plan_path, output, font, bold_font=None):
     input_paths = {plan_path, *(root / 'data' / (name + '.json') for name in ('people', 'sources', 'links', 'claims')),
                    root / 'data/searches.jsonl'}
     input_hashes = {path: digest(path.read_bytes()) for path in input_paths}
-    validator = Validator(root, hashes=True)
-    if validator.run():
-        raise ValueError('Реєстри або хеші джерел мають помилки; PDF не створено.')
-    plan = json.loads(plan_path.read_text(encoding='utf-8'))
+    rows = load(root, hashes=True)
+    plan = json.loads(plan_path.read_text(encoding='utf-8-sig'))
     for key in ('title', 'snapshot_at', 'audience', 'root_person_id', 'summary', 'decision'):
         if not plan.get(key):
             raise ValueError('У плані бракує ' + key)
@@ -85,7 +85,6 @@ def build(root, plan_path, output, font, bold_font=None):
         raise ValueError('Потрібне рішення про продовження/зупинку з причиною.')
     if plan['audience'] != 'owner' and not all(plan.get('privacy_review', {}).get(k) for k in ('by', 'scope', 'date')):
         raise ValueError('Для іншої аудиторії потрібна перевірка вмісту й медіа: privacy_review by/scope/date.')
-    rows = load(root)
     stats = metrics(*(rows[k] for k in ('people', 'links', 'sources', 'searches')), plan['root_person_id'])
     indexes = {kind: {record['id']: record for record in rows[name]}
                for kind, name in [('P', 'people'), ('S', 'sources'), ('C', 'claims'), ('L', 'links')]}
@@ -170,10 +169,13 @@ def build(root, plan_path, output, font, bold_font=None):
         add(plan['changes'])
     add('Дослідження в цифрах', 'h1')
     for label, value in [('Карток осіб у реєстрі', stats['people_cards']),
-                         ('Предків із добре обґрунтованими переходами від початкової особи', stats['ancestors_supported_only']),
-                         ('Предків разом із робочими лініями', stats['ancestors_including_working']),
-                         ('Глибина разом із робочими переходами', stats['ancestry']['depth_including_working']),
-                         ('Глибина лише добре обґрунтованих переходів', stats['ancestry']['depth_supported_only']),
+                         ('Предків у біологічних та усиновлювальних лініях разом із робочими', stats['ancestors_including_working']),
+                         ('Із них: лише через біологічні переходи', stats['biological_ancestors_including_working']),
+                         ('Із них: доступні тільки через усиновлення', stats['adoptive_only_ancestors_including_working']),
+                         ('Предків лише з добре обґрунтованими переходами', stats['ancestors_supported_only']),
+                         ('Осіб лише в контекстній схемі, поза числом предків', stats['context_only_people']),
+                         ('Глибина родовідних ліній разом із робочими / лише добре обґрунтовані',
+                          str(stats['ancestry']['depth_including_working']) + ' / ' + str(stats['ancestry']['depth_supported_only'])),
                          ('Записів джерел у реєстрі (не число незалежних актів)', stats['source_records'])]:
         add(str(value) + ' — ' + label)
     known = stats['coverage']['known_units']['visual']
@@ -184,10 +186,10 @@ def build(root, plan_path, output, font, bold_font=None):
     if stats['coverage']['excluded']:
         add('Не включено до підрахунку покриття: ' + '; '.join(item['id'] + ' — ' + item['reason'] for item in stats['coverage']['excluded']), 'small')
     add('Як читати', 'h2')
-    add('Картки осіб включають кандидатів. Предки рахуються лише за прийнятими переходами батьки–діти. Робочий зв’язок може змінитися; слабкий перехід обмежує всю старшу лінію. Прочитання, тотожність і спорідненість оцінені окремо.')
+    add('Картки осіб включають кандидатів. Предки й глибина рахуються за прийнятими біологічними та усиновлювальними переходами. Інші типи й невстановлена природа залишаються в контекстній схемі; старша лінія за таким переходом також не додається до числа предків без іншого родовідного шляху. Робочий місток обмежує всю старшу лінію. Три оцінки збережено окремо.', 'small')
     story.append(PageBreak())
-    add('Дерево прийнятих переходів', 'h1')
-    add('Кожен блок читається від дитини ліворуч до її батька або матері праворуч. Кандидати не приєднані. Схема відтворює поточні рішення реєстру.', 'small')
+    add('Схема прийнятих зв’язків', 'h1')
+    add('Блоки ведуть від початкової особи до старших або пов’язаних осіб. Читайте підпис природи кожного зв’язку: стрілка сама по собі не означає біологічного походження. Кандидати не приєднані.', 'small')
     if not links:
         add('Прийнятих родовідних переходів від початкової особи ще немає.')
     for link in links:
@@ -198,6 +200,9 @@ def build(root, plan_path, output, font, bold_font=None):
                                    ('VALIGN', (0, 0), (-1, -1), 'TOP'), ('LEFTPADDING', (0, 0), (-1, -1), 10),
                                    ('TOPPADDING', (0, 0), (-1, -1), 8)]))
         story.extend([table, Spacer(1, 10)])
+        add('Природа зв’язку: ' + NATURES[link.get('relationship_nature', 'unspecified')], 'small')
+        if link['id'] not in stats['ancestry']['family_link_ids']:
+            add('Контекстний перехід: цей шлях не збільшує число предків або глибину родоводу.', 'small')
         add(link.get('basis', ''), 'small')
         add('Тотожність — ' + assessment(link['identity_confidence']), 'small')
         add('Спорідненість — ' + assessment(link['relationship_confidence']), 'small')
@@ -214,6 +219,8 @@ def build(root, plan_path, output, font, bold_font=None):
             if ident not in shown_links:
                 link = indexes['L'][ident]
                 add(ident + ' — ' + STATUS[link['status']], 'small')
+                if link['kind'] == 'parent_child':
+                    add('Природа зв’язку: ' + NATURES[link.get('relationship_nature', 'unspecified')], 'small')
                 add('Тотожність — ' + assessment(link['identity_confidence']), 'small')
                 add('Спорідненість — ' + assessment(link['relationship_confidence']), 'small')
                 if link.get('conflicts'):

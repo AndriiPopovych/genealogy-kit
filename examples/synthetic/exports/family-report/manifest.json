@@ -102,7 +102,7 @@
     },
     {
       "path": "family_report.json",
-      "sha256": "3edf272b114d9fbf38435f67b36e9957044c13a0d4d3da8b664ee536ebb4b38b"
+      "sha256": "6420cfff67b7011c34e65efc7054705c784f80188e20e23e6a28f268648ea57f"
     },
     {
       "path": "originals/act-a.png",
@@ -116,15 +116,15 @@
   "files": [
     {
       "path": "exports/family-report/metrics.json",
-      "sha256": "b5d46e3dfd7e52f905e875368af581ba2dd7fa9c348fc9f5949547c35e8009ce"
+      "sha256": "8b8a6499b3a94422b9b6c0945a6b04ab71b86e6cc2886186e97efba9b3573dee"
     },
     {
       "path": "exports/family-report/report.pdf",
-      "sha256": "67f0eef0590e0af4da7c927e2a0ee019b7655d6ca19434bf760160b4b4f1494b"
+      "sha256": "5b231f147b4b19f38b39a4ef033388689b5a769bfbe16da91b13643e2c36cae8"
     }
   ],
-  "privacy_revision": "synthetic-only",
+  "privacy_revision": "owner-local",
   "local_status": "current",
   "deployed_status": "not_deployed",
-  "visual_qa": "2026-11-11: модель оглянула всі 5 сторінок після рендеру Poppler; текст, схема та зображення читабельні. Внутрішні переходи перевірені pypdf; зовнішніх адрес у прикладі немає."
+  "visual_qa": "Модельний огляд усіх 5 відрендерених сторінок, українського тексту, природи зв’язку та 5 внутрішніх переходів; 2026-11-11. Історичних адрес у синтетичному прикладі немає."
 }

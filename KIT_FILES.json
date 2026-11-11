@@ -18,7 +18,7 @@
     {
       "path": "CHANGELOG.md",
       "version": "3.0.1-local",
-      "sha256": "a2cef2eaf89104a6c6eca2e984d33ce7e9cd47866f4071982b9cd7036b559cec",
+      "sha256": "4c708a56c17e2813dd2fc8580f8275d83b350717cebe52702099a314913ea904",
       "type": "guide"
     },
     {
@@ -723,7 +723,7 @@
     {
       "path": "guide/pdf_reports.md",
       "version": "3.0.1-local",
-      "sha256": "220174d311b5d325b943d06c6310c8e310f5e6a46c86ab76ef2f2393e5c5185a",
+      "sha256": "720feb9b3fd74b3e4d49eb204c0f311d68d0abd035d93f41a300f9ca88a75e2b",
       "type": "guide"
     },
     {
@@ -741,7 +741,7 @@
     {
       "path": "examples/synthetic/family_report.json",
       "version": "3.0.1-local",
-      "sha256": "3edf272b114d9fbf38435f67b36e9957044c13a0d4d3da8b664ee536ebb4b38b",
+      "sha256": "6420cfff67b7011c34e65efc7054705c784f80188e20e23e6a28f268648ea57f",
       "type": "example"
     },
     {
@@ -753,31 +753,31 @@
     {
       "path": "examples/synthetic/exports/family-report/report.pdf",
       "version": "3.0.1-local",
-      "sha256": "67f0eef0590e0af4da7c927e2a0ee019b7655d6ca19434bf760160b4b4f1494b",
+      "sha256": "5b231f147b4b19f38b39a4ef033388689b5a769bfbe16da91b13643e2c36cae8",
       "type": "example"
     },
     {
       "path": "examples/synthetic/exports/family-report/manifest.json",
       "version": "3.0.1-local",
-      "sha256": "54daf3e60c4f4e410792ac54b9adeee858191ba9487972a4315ff62ae0346d7a",
+      "sha256": "eb4add7bd13aae7f986fbc8a9adad4ef4170db12f463dd1d9a6c3b2546392e2f",
       "type": "example"
     },
     {
       "path": "examples/synthetic/exports/family-report/metrics.json",
       "version": "3.0.1-local",
-      "sha256": "b5d46e3dfd7e52f905e875368af581ba2dd7fa9c348fc9f5949547c35e8009ce",
+      "sha256": "8b8a6499b3a94422b9b6c0945a6b04ab71b86e6cc2886186e97efba9b3573dee",
       "type": "example"
     },
     {
       "path": "tools/research_metrics.py",
       "version": "3.0.1-local",
-      "sha256": "286ff1a45eccb495588852f59f91548be1685e2c748f7fc61f8182f7b8214056",
+      "sha256": "7624766405baccbddc5fb75055e9fd8d3d59da1d9f2ab5f79c44c69febef03d5",
       "type": "tool"
     },
     {
       "path": "tools/build_family_pdf.py",
       "version": "3.0.1-local",
-      "sha256": "99f5ab1b85b5e8e0fffebb40488a11a230798f229cd9476a14432fa2e5cab868",
+      "sha256": "c30dff0281071f55c81f9878d202d6df045d3ff68c5013c95ea5d1537aa1a8ad",
       "type": "tool"
     },
     {
@@ -789,7 +789,7 @@
     {
       "path": "tests/test_reports.py",
       "version": "3.0.1-local",
-      "sha256": "ee5443085652c1c79956f3981d70c3c8147666444239c5022eb1330a495c12c9",
+      "sha256": "a6ca86327ef8b7a5a5ff083ec0dae1b8b0ead8b414497c0056a3f79503f58d28",
       "type": "test"
     },
     {

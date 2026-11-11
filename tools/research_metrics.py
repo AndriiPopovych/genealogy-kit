@@ -5,7 +5,10 @@ import json
 from collections import defaultdict
 from pathlib import Path
 
+from validate_registry import Validator
+
 ACCEPTED = {'supported', 'accepted_working'}
+FAMILY_NATURES = frozenset({'biological', 'adoptive'})
 VISUAL_METHODS = {'field_review', 'image_review', 'full_review'}
 
 
@@ -19,7 +22,7 @@ def union_size(intervals):
 
 
 def ancestry(people, links, root_id):
-    """Лише вже прийняті parent_child; робочий місток зберігається по всій лінії."""
+    """Прийняті зв’язки: родовідні підрахунки окремо від контекстної схеми."""
     active = {p['id'] for p in people if not p.get('merged_into')}
     if root_id not in active:
         raise ValueError('Початкова особа відсутня або об’єднана: ' + root_id)
@@ -32,8 +35,8 @@ def ancestry(people, links, root_id):
             parents[child].append(link)
     memo, visiting = {}, set()
 
-    def walk(child, supported_only):
-        key = (child, supported_only)
+    def walk(child, supported_only, natures):
+        key = (child, supported_only, natures)
         if key in visiting:
             raise ValueError('Цикл родоводу біля ' + child)
         if key in memo:
@@ -43,8 +46,10 @@ def ancestry(people, links, root_id):
         for edge in parents[child]:
             if supported_only and edge['status'] != 'supported':
                 continue
+            if natures is not None and edge.get('relationship_nature', 'unspecified') not in natures:
+                continue
             parent = edge['roles']['parent']
-            older, more_edges, more_depth = walk(parent, supported_only)
+            older, more_edges, more_depth = walk(parent, supported_only, natures)
             ancestors |= older | {parent}
             edge_ids |= more_edges | {edge['id']}
             depth = max(depth, 1 + more_depth)
@@ -52,13 +57,25 @@ def ancestry(people, links, root_id):
         memo[key] = ancestors, edge_ids, depth
         return memo[key]
 
-    all_ids, edges, depth = walk(root_id, False)
-    supported, _, supported_depth = walk(root_id, True)
+    # Повна схема зберігає небіологічні та невизначені зв’язки разом зі старшими
+    # лініями. Її наявність не перетворює їх на предків початкової особи.
+    recorded, edges, _ = walk(root_id, False, None)
+    all_ids, family_edges, depth = walk(root_id, False, FAMILY_NATURES)
+    supported, _, supported_depth = walk(root_id, True, FAMILY_NATURES)
+    biological, _, biological_depth = walk(root_id, False, frozenset({'biological'}))
+    biological_supported, _, biological_supported_depth = walk(root_id, True, frozenset({'biological'}))
     return {'root_id': root_id, 'ancestor_ids': sorted(all_ids),
             'supported_ancestor_ids': sorted(supported),
             'working_only_ancestor_ids': sorted(all_ids - supported),
+            'biological_ancestor_ids': sorted(biological),
+            'biological_supported_ancestor_ids': sorted(biological_supported),
+            'adoptive_only_ancestor_ids': sorted(all_ids - biological),
+            'context_only_person_ids': sorted(recorded - all_ids),
+            'family_link_ids': sorted(family_edges),
             'link_ids': sorted(edges), 'depth_including_working': depth,
-            'depth_supported_only': supported_depth}
+            'depth_supported_only': supported_depth,
+            'biological_depth_including_working': biological_depth,
+            'biological_depth_supported_only': biological_supported_depth}
 
 
 def coverage(searches):
@@ -105,16 +122,20 @@ def metrics(people, links, sources, searches, root_id):
             'source_records': len(sources), 'search_entries': len(searches),
             'ancestors_including_working': len(tree['ancestor_ids']),
             'ancestors_supported_only': len(tree['supported_ancestor_ids']),
+            'biological_ancestors_including_working': len(tree['biological_ancestor_ids']),
+            'adoptive_only_ancestors_including_working': len(tree['adoptive_only_ancestor_ids']),
+            'context_only_people': len(tree['context_only_person_ids']),
             'ancestry': tree, 'coverage': coverage(searches)}
 
 
-def load(root):
-    root = Path(root)
-    rows = {key: json.loads((root / 'data' / (key + '.json')).read_text(encoding='utf-8'))
-            for key in ('people', 'links', 'sources', 'claims')}
-    rows['searches'] = [json.loads(line) for line in
-                        (root / 'data/searches.jsonl').read_text(encoding='utf-8').splitlines() if line.strip()]
-    return rows
+def load(root, *, hashes=False):
+    """Єдиний перевірений зріз: BOM і сумісні поля обробляє валідатор у пам’яті."""
+    validator = Validator(root, hashes=hashes)
+    if validator.run():
+        raise ValueError('Реєстри або хеші джерел мають структурні помилки.')
+    return {name: [record for record, _ in validator.rows[kind]]
+            for kind, name in [('P', 'people'), ('L', 'links'), ('S', 'sources'),
+                               ('C', 'claims'), ('SEARCH', 'searches')]}
 
 
 if __name__ == '__main__':
@@ -123,10 +144,6 @@ if __name__ == '__main__':
     parser.add_argument('root_person_id')
     args = parser.parse_args()
     try:
-        from validate_registry import Validator
-        validator = Validator(args.root)
-        if validator.run():
-            raise ValueError('Спочатку виправте структурні помилки реєстрів.')
         rows = load(args.root)
         result = metrics(*(rows[k] for k in ('people', 'links', 'sources', 'searches')), args.root_person_id)
         print(json.dumps(result, ensure_ascii=False, indent=2))
