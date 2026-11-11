@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Шаблон огляду дослідження — чернетка</title>
+<style>
+:root{color-scheme:light;--paper:#f5f2e9;--ink:#243b39;--muted:#4e625f;--line:#cbd3c9;--accent:#246754}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:18px/1.65 system-ui,sans-serif}main,footer{max-width:1080px;margin:auto;padding:32px 28px}header{padding:28px 0 36px;border-bottom:1px solid var(--line)}.eyebrow{font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}h1,h2,h3{line-height:1.2}h1{font-family:Georgia,serif;font-weight:400;font-size:clamp(2.3rem,6vw,4.3rem);max-width:900px;margin:18px 0}h2{font-size:1.7rem;margin-top:0}h3{font-size:1.2rem}.lead{font-size:1.3rem;max-width:860px}.meta,small{font-size:.9rem;color:var(--muted)}nav{display:flex;flex-wrap:wrap;gap:12px 24px;margin-top:24px}a{color:#195b49;text-underline-offset:4px;overflow-wrap:anywhere}a:focus-visible{outline:3px solid #a65221;outline-offset:4px}section{margin-top:40px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}.card{background:#fffdf7;border:1px solid var(--line);border-radius:12px;padding:26px}.notice{border-left:5px solid #a65221;background:#fff4e1;padding:20px 24px;margin-top:24px}.tag{font-size:.83rem;font-weight:650;color:#70401f}dl{margin-bottom:0}dt{font-weight:650}dd{margin:0 0 12px;color:var(--muted)}li{margin:10px 0}footer{border-top:1px solid var(--line);font-size:.85rem;color:var(--muted)}@media(max-width:680px){main,footer{padding:20px}.grid{grid-template-columns:1fr}.card{padding:20px}.lead{font-size:1.12rem}}@media print{body{background:white;color:#000;font-size:11pt}main,footer{max-width:none;padding:0}nav{display:none}h1{font-size:30pt}.grid{display:block}.card,.notice{break-inside:avoid;margin:12px 0;background:white}section{margin-top:24px}a{color:#000}}
+</style>
+</head>
+<body>
+<main>
+<!-- Заповнювачі у квадратних дужках замінює автор. Це не автоматичний генератор.
+Екрануйте текст джерел; не додавайте зовнішніх ресурсів чи виконуваного вмісту.
+Додайте поруч manifest.json за guide/research_updates.md. -->
+<header><div class="eyebrow">Локальний огляд дослідження · Чернетка</div>
+<h1>[Головний результат словами]</h1>
+<p class="lead">[Що тепер знаємо і чому це важливо для родини.]</p>
+<p class="meta">[Родина й тема] · Зріз: [дата] · Для: [аудиторія]<br>Порівняння: [період і попереднє оновлення / перший зріз].</p>
+<nav aria-label="Розділи огляду"><a href="#picture">Загальна картина</a><a href="#findings">Знахідки</a><a href="#next">Що далі</a></nav>
+<div class="notice"><strong>[Головна невизначеність]</strong><br>[Робочий статус і слабкий перехід до початкової особи; що ще не встановлено.]</div></header>
+<section id="picture"><h2>Як змінилася загальна картина</h2><p>[Попереднє уявлення → поточний висновок. Охоплені гілки та вплив на головну мету. Що не переглядали.]</p></section>
+<section id="findings"><h2>Знахідки та їхнє значення</h2><div class="grid">
+<article class="card"><span class="tag">[Статус рішення словами й кодом]</span><h3>[Людина / питання]</h3><p>[Результат і його значення; що сказано прямо, а що виведено.]</p><p>[S/C/L, тип джерела, точний локатор і перевірене посилання.]</p><dl><dt>Прочитання</dt><dd>[Рівень і причина]</dd><dt>Тотожність</dt><dd>[Рівень і причина]</dd><dt>Спорідненість</dt><dd>[Рівень і причина / не оцінювалася]</dd></dl><p>[Альтернатива, суперечність та умова перегляду.]</p></article>
+<article class="card"><span class="tag">[Уточнення / інший результат]</span><h3>[Друга знахідка]</h3><p>[Висновок і значення.]</p><p>[S/C/L, локатор, посилання; окремі оцінки й обмеження.]</p></article>
+</div></section>
+<section id="next"><h2>Наступна перевірка</h2><p>[Конкретна дія; які версії вона допоможе розрізнити.]</p><p class="meta">[Посилання на актуальні реєстри, попередній огляд або виправлення, якщо є.]</p></section>
+</main>
+<footer>Датований зріз, не живий реєстр. Перед використанням перевірте актуальність у state/current.md та manifest.json. Локальне створення не означає публікації.</footer>
+</body>
+</html>
