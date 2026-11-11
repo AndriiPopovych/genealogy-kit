@@ -791,6 +791,12 @@
       "version": "3.0.1-local",
       "sha256": "ee5443085652c1c79956f3981d70c3c8147666444239c5022eb1330a495c12c9",
       "type": "test"
+    },
+    {
+      "path": ".gitattributes",
+      "version": "3.0.1-local",
+      "type": "guide",
+      "sha256": "a376ff3d2103555f02fb4005bec212a17e6a281c1e771334b6f3987bf24343d7"
     }
   ],
   "empty_directories": [
